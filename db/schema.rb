@@ -19,8 +19,11 @@ ActiveRecord::Schema.define(version: 20170911222803) do
     t.string "name"
     t.string "desc"
     t.string "abv"
+    t.string "image_url"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_beers_on_company_id"
   end
 
   create_table "companies", force: :cascade do |t|
