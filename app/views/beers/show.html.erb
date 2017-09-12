@@ -4,3 +4,4 @@
 <img src=<%=@beer.image_url%>
 <p><%= link_to 'Delete', company_beer_path(@beer), method: :delete %></p>
 <p><%= link_to 'Go back to Company', company_path(@beer.company_id)%></p>
+<p><%= link_to 'Edit the Beer', edit_company_beer_path(@beer)%></p>

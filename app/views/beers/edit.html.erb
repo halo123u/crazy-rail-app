@@ -1,2 +1,12 @@
-<h1>Beers#edit</h1>
-<p>Find me in app/views/beers/edit.html.erb</p>
+<h1>Edit</h1>
+
+<%= form_for @beer, url: company_beer_path(@beer) do |f| %>
+    <%= f.text_field :name  %>
+    <%= f.text_field :desc %>
+    <%= f.text_field :abv %>
+    <%= f.text_field :image_url %>
+    <%= f.hidden_field :company_id, :value => @beer.company_id %>
+    <%= f.submit 'hit me' %>
+<% end %>
+
+<p><%= link_to 'cancel', company_beer_path(@beer)%></p>

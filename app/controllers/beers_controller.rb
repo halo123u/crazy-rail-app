@@ -20,6 +20,7 @@ class BeersController < ApplicationController
   end
 
   def edit
+    @beer = Beer.find(params[:id])
   end
   def destroy
     @beer = Beer.find(params[:id])
@@ -27,7 +28,11 @@ class BeersController < ApplicationController
     @beer.destroy!
     redirect_to company_path(@company)
   end
-
+  def update
+      @beer = Beer.find(params[:id])
+      @beer.update(create_params)
+        redirect_to company_beer_path(@beer)
+  end
 
   def create_params
     params.require(:beer).permit(:name, :desc, :abv, :image_url, :company_id)
