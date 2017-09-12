@@ -1,2 +1,6 @@
-<h1>Beers#show</h1>
-<p>Find me in app/views/beers/show.html.erb</p>
+<h1><%=@beer.name %></h1>
+<h2><%=@beer.desc %></h2>
+<h3><%=@beer.abv%></h3>
+<img src=<%=@beer.image_url%>
+<p><%= link_to 'Delete', company_beer_path(@beer), method: :delete %></p>
+<p><%= link_to 'Go back to Company', company_path(@beer.company_id)%></p>

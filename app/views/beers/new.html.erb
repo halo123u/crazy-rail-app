@@ -1,0 +1,10 @@
+<h1>Add  A beer</h1>
+
+<%= form_for @beer, url: company_beers_path(@company) do |f| %>
+    <%= f.text_field :name, placeholder: 'Beer Name' %>
+    <%= f.text_field :desc, placeholder: 'Description' %>
+    <%= f.text_field :abv, placeholder: 'abv%' %>
+    <%= f.text_field :image_url, placeholder: 'image_url' %>
+    <%= f.hidden_field :company_id, :value => @beer.company_id %>
+    <%= f.submit 'hit me' %>
+<% end %>

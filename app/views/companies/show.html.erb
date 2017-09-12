@@ -1,2 +1,10 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+<h1><%= @company.name%></></h1>
+
+<h2><%=@company.country%></h2>
+<img src=<%=@company.image_url %>>
+<%= link_to 'add beer', new_company_beer_path(@company) %> 
+
+<% @beers.each do |beer| %>
+    <p><%= beer.name %></p>
+    <p><%= link_to 'more info', company_beer_path(@company.id,beer.id)%></p>
+<% end %>

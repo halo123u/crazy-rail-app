@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170911222803) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
